@@ -1,4 +1,4 @@
-// import React, {Component} from 'react';
+import './navBar.css'
 import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,38 +33,20 @@ export class NavBar extends React.Component<NavBarProps, NavBarState> {
   componentDidMount () {
 
   }
-  public classes: any
-
-  useStyles () {
-    return makeStyles((theme: Theme) =>
-      createStyles({
-        root: {
-          flexGrow: 1,
-        },
-        menuButton: {
-          marginRight: theme.spacing(2),
-        },
-        title: {
-          flexGrow: 1,
-        },
-      }),
-    )
-  }
 
   render () {
-   this.classes = this.useStyles()
-    // console.log(classes)
     return (
-      <div className={this.classes.root}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton edge="start" className={this.classes.menuButton} color="inherit" aria-label="menu">
-              <MenuIcon />
+      <div>
+        <AppBar>
+          <Toolbar className='tool-bar'>
+            <IconButton>
+              <MenuIcon className='menu-icon'/>
             </IconButton>
-            <Typography variant="h6" className={this.classes.title}>
-              News
+            <Typography className='title'>
+              Home
             </Typography>
-            <Button color="inherit">Login</Button>
+            <Button id='button-login'>Login</Button>
+            <Button id='button-login'>Contact Us</Button>
           </Toolbar>
         </AppBar>
       </div>
